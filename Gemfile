@@ -5,6 +5,11 @@ source "https://rubygems.org"
 ruby "3.3.8"
 gem "rails", "~> 7.2"
 
+gem "faker" # creates realistic seed data, valuable for staging and demos
+# these gems haven't been publised, I am using my local installed gems
+gem "faker-omniauth", :github => 'stefannibrasil/faker-omniauth', :branch => 'main'
+gem "faker-git", :github => 'stefannibrasil/faker-git', :branch => 'main'
+
 gem "after_party" # post-deployment tasks
 gem "amazing_print" # easier console reading
 gem "authtrail" # Track Devise login activity
@@ -18,7 +23,7 @@ gem "delayed_job_active_record"
 gem "devise" # for authentication
 gem "devise_invitable"
 gem "draper" # adds decorators for cleaner presentation logic
-gem "faker" # creates realistic seed data, valuable for staging and demos
+
 gem "filterrific" # filtering and sorting of models
 gem "friendly_id", "~> 5.5.1" # allows us to use a slug instead of casa case ids in their URLs
 gem "groupdate" # Group Data

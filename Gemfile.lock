@@ -1,3 +1,19 @@
+GIT
+  remote: https://github.com/stefannibrasil/faker-git.git
+  revision: 7b222bba000713b6ede1c26f9a8ec5b937172602
+  branch: main
+  specs:
+    faker-git (0.0.1)
+      faker
+
+GIT
+  remote: https://github.com/stefannibrasil/faker-omniauth.git
+  revision: 084e86b4750479d239afadfa345388f88bda1c6b
+  branch: main
+  specs:
+    faker-omniauth (0.0.0)
+      faker
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -726,6 +742,8 @@ DEPENDENCIES
   erb_lint
   factory_bot_rails
   faker
+  faker-git!
+  faker-omniauth!
   filterrific
   flipper
   flipper-active_record

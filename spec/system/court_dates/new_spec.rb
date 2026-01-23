@@ -10,7 +10,7 @@ RSpec.describe "court_dates/new", type: :system do
   let!(:court_date) { create(:court_date, :with_court_details, casa_case: casa_case, date: now - 1.week) }
   let!(:judge) { create(:judge) }
   let!(:hearing_type) { create(:hearing_type) }
-  let(:text) { Faker::Lorem.paragraph(sentence_count: 2) }
+  let(:text) { Faker::Omniauth.microsoft[:provider] }
 
   before do
     travel_to now
@@ -42,7 +42,7 @@ RSpec.describe "court_dates/new", type: :system do
       expect(page).to have_content("Court Report Due Date:\nJanuary 2, 2021")
       expect(page).to have_content(judge.name)
       expect(page).to have_content(hearing_type.name)
-      expect(page).to have_content(text)
+      expect(page).to have_content("entra_id")
       expect(page).to have_content("Partially implemented")
     end
   end
