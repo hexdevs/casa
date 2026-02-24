@@ -4,7 +4,6 @@ require "rails_helper"
 
 RSpec.describe "court_dates/edit", type: :system do
   context "with date"
-  let(:now) { Date.new(2021, 1, 1) }
   let(:organization) { create(:casa_org) }
   let(:admin) { create(:casa_admin, casa_org: organization) }
   let(:volunteer) { create(:volunteer) }
@@ -70,7 +69,7 @@ RSpec.describe "court_dates/edit", type: :system do
       expect(page).to have_text("Court Order Text One")
     end
 
-    it "can delete a future court date", :js do
+    it "allows deleting a future court date", :js do
       visit root_path
       click_on "Cases"
       click_on 'CINA-08-1001'
@@ -90,21 +89,24 @@ RSpec.describe "court_dates/edit", type: :system do
   end
 
   context "as a supervisor" do
-    it "can delete a future court date", :js do
+    it "allows deleting a future court date", :js do
       sign_in supervisor
 
       visit root_path
       click_on "Cases"
-      click_on casa_case.case_number
+      click_on 'CINA-08-1001'
 
-      expect(CourtDate.count).to eq 2
-      expect(page).to have_content future_court_date.date.strftime("%B %-d, %Y")
-      page.find("a", text: future_court_date.date.strftime("%B %-d, %Y")).click
-      page.find("a", text: "Delete Future Court Date").click
-      page.driver.browser.switch_to.alert.accept
+      expect(page).to have_content("December 25, 2020")
+      expect(page).to have_content("January 8, 2021")
+
+      page.find("a", text: "January 8, 2021").click
+      accept_alert "Are you sure?" do
+        page.find("a", text: "Delete Future Court Date").click
+      end
 
       expect(page).to have_content "Court date was successfully deleted."
-      expect(CourtDate.count).to eq 1
+      expect(page).not_to have_content("January 8, 2021")
+      expect(page).to have_content("December 25, 2020")
     end
   end
 
@@ -115,11 +117,13 @@ RSpec.describe "court_dates/edit", type: :system do
 
       visit root_path
       click_on "Cases"
-      click_on casa_case.case_number
+      click_on 'CINA-08-1001'
 
-      expect(CourtDate.count).to eq 2
-      expect(page).to have_content future_court_date.date.strftime("%B %-d, %Y")
-      page.find("a", text: future_court_date.date.strftime("%B %-d, %Y")).click
+      expect(page).to have_content("December 25, 2020")
+      expect(page).to have_content("January 8, 2021")
+
+      page.find("a", text: "January 8, 2021").click
+
       expect(page).not_to have_content "Delete Future Court Date"
     end
   end
