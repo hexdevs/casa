@@ -7,7 +7,7 @@ RSpec.describe "court_dates/edit", type: :system do
   let(:organization) { create(:casa_org) }
   let(:admin) { create(:casa_admin, casa_org: organization) }
   let(:volunteer) { create(:volunteer) }
-  let(:supervisor) { create(:casa_admin, casa_org: organization) }
+  let(:supervisor) { create(:supervisor, casa_org: organization) }
   let!(:casa_case) { create(:casa_case, case_number: 'CINA-08-1001', casa_org: organization) }
   let!(:court_date) { create(:court_date, :with_court_details, casa_case: casa_case, date: Date.new(2020, 12, 25)) }
   let!(:future_court_date) { create(:court_date, :with_court_details, casa_case: casa_case, date: Date.new(2021, 1, 8)) }
