@@ -2,6 +2,7 @@
 
 import Swal from 'sweetalert2'
 import { disableBtn, enableBtn } from './casa_case'
+import $ from "jquery";
 
 const SUBMIT_BUTTON_CLASS = 'submit-password'
 const PASSWORD_FIELD_CLASS = 'password-new'

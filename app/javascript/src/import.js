@@ -5,6 +5,8 @@
 /* global File */
 /* global DataTransfer */
 
+import $ from "jquery";
+
 function dataURItoBlob (dataURI) {
   // convert base64 to raw binary data held in a string
   const byteString = atob(dataURI.split(',')[1])

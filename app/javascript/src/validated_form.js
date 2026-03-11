@@ -1,5 +1,6 @@
 const { Notifier } = require('./notifier')
 const TypeChecker = require('./type_checker')
+import $ from "jquery";
 
 const GET_ERROR_STATE_UNDEFINED_MESSAGE = 'getErrorState for the component is not defined'
 const GET_WARNING_STATE_UNDEFINED_MESSAGE = 'getWarningState for the component is not defined'

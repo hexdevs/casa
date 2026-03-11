@@ -1,4 +1,8 @@
 /* global alert */
+import $ from "jquery";
+import DataTable from "datatables.net";
+DataTable($);
+
 const { Notifier } = require('./notifier')
 let pageNotifier
 

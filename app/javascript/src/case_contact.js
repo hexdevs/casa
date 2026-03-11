@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import $ from "jquery";
 
 function convertDateToSystemTimeZone(date) {
   return new Date(typeof date === "string" ? new Date(date) : date);

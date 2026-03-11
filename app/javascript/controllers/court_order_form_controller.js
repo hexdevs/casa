@@ -1,5 +1,6 @@
 import NestedForm from '@stimulus-components/rails-nested-form'
 import Swal from 'sweetalert2'
+import $ from "jquery";
 
 export default class extends NestedForm {
   //

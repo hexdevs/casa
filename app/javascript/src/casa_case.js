@@ -3,6 +3,8 @@
 /* global DOMParser */
 /* global spinner */
 
+import $ from "jquery";
+
 import Swal from 'sweetalert2'
 
 function copyOrdersFromCaseWithConfirmation () {

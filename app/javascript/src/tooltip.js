@@ -1,3 +1,6 @@
-$(() => { // JQuery's callback for the DOM loading
-  $('[data-toggle="tooltip"]').tooltip()
-})
+import $ from "jquery";
+
+$(() => {
+  // JQuery's callback for the DOM loading
+  $('[data-toggle="tooltip"]').tooltip();
+});

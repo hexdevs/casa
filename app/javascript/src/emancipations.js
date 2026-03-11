@@ -1,13 +1,16 @@
-$(() => { // JQuery's callback for the DOM loading
-  $('table#all-case-emancipations').DataTable({
+import $ from "jquery";
+import DataTable from "datatables.net";
+DataTable($);
+
+$(() => {
+  // JQuery's callback for the DOM loading
+  $("table#all-case-emancipations").DataTable({
     autoWidth: false,
     searching: false,
     stateSave: false,
-    columnDefs: [
-      { orderable: false, targets: 1 }
-    ],
+    columnDefs: [{ orderable: false, targets: 1 }],
     language: {
-      emptyTable: 'No transitioning cases'
-    }
-  })
-})
+      emptyTable: "No transitioning cases",
+    },
+  });
+});

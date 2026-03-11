@@ -1,5 +1,6 @@
 import { Chart, registerables } from 'chart.js'
 import 'chartjs-adapter-luxon'
+import $ from "jquery";
 
 const { Notifier } = require('./notifier')
 

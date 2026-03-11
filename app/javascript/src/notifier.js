@@ -1,4 +1,5 @@
 import { escape } from 'lodash'
+import $ from "jquery";
 
 const TypeChecker = require('./type_checker.js')
 

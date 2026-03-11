@@ -1,6 +1,7 @@
 /* eslint-env jquery */
 
 import Swal from 'sweetalert2'
+import $ from "jquery";
 
 import { disableBtn, enableBtn } from './casa_case'
 
