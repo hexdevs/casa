@@ -9,8 +9,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = {host: "localhost", port: 3000} # for devise authentication
   # While tests run files are not watched, reloading is not necessary.
-  # Turn false under Spring and add config.action_view.cache_template_loading = true.
-  config.action_view.cache_template_loading = true
+  config.enable_reloading = false
 
   # Eager loading loads your entire application. When running a single test locally,
   # this is usually not necessary, and can slow down your test suite. However, it's
@@ -25,12 +24,12 @@ Rails.application.configure do
     "Cache-Control" => "public, max-age=#{1.hour.to_i}"
   }
 
-  # Show full error reports and disable caching.
+  # Show full error reports.
   config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
   # config.cache_store = :null_store
 
-  # Raise exceptions instead of rendering exception templates.
+  # Render exception templates for rescuable exceptions and raise for other exceptions.
   config.action_dispatch.show_exceptions = :none
 
   # Disable request forgery protection in test environment.
