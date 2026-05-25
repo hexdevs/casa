@@ -57,24 +57,3 @@ class CourtDate < ApplicationRecord
     end
   end
 end
-# == Schema Information
-#
-# Table name: court_dates
-#
-#  id                    :bigint           not null, primary key
-#  court_report_due_date :datetime
-#  date                  :datetime         not null
-#  created_at            :datetime         not null
-#  updated_at            :datetime         not null
-#  casa_case_id          :bigint           not null
-#  hearing_type_id       :bigint
-#  judge_id              :bigint
-#
-# Indexes
-#
-#  index_court_dates_on_casa_case_id  (casa_case_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_case_id => casa_cases.id)
-#

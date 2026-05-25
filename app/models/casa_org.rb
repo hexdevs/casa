@@ -149,31 +149,3 @@ class CasaOrg < ApplicationRecord
     end
   end
 end
-
-# == Schema Information
-#
-# Table name: casa_orgs
-#
-#  id                          :bigint           not null, primary key
-#  additional_expenses_enabled :boolean          default(FALSE)
-#  address                     :string
-#  display_name                :string
-#  footer_links                :string           default([]), is an Array
-#  learning_topic_active       :boolean          default(FALSE)
-#  name                        :string           not null
-#  other_duties_enabled        :boolean          default(TRUE)
-#  show_driving_reimbursement  :boolean          default(TRUE)
-#  show_fund_request           :boolean          default(FALSE)
-#  slug                        :string
-#  twilio_account_sid          :string
-#  twilio_api_key_secret       :string
-#  twilio_api_key_sid          :string
-#  twilio_enabled              :boolean          default(FALSE)
-#  twilio_phone_number         :string
-#  created_at                  :datetime         not null
-#  updated_at                  :datetime         not null
-#
-# Indexes
-#
-#  index_casa_orgs_on_slug  (slug) UNIQUE
-#

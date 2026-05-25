@@ -29,14 +29,3 @@ class HearingType < ApplicationRecord
     end
   end
 end
-
-# == Schema Information
-#
-# Table name: hearing_types
-#
-#  id                     :bigint           not null, primary key
-#  active                 :boolean          default(TRUE), not null
-#  checklist_updated_date :string           default("None"), not null
-#  name                   :string           not null
-#  casa_org_id            :bigint           not null
-#

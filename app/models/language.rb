@@ -12,18 +12,3 @@ class Language < ApplicationRecord
     self.name = name.strip if name
   end
 end
-
-# == Schema Information
-#
-# Table name: languages
-#
-#  id          :bigint           not null, primary key
-#  name        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  casa_org_id :bigint           not null
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_org_id => casa_orgs.id)
-#

@@ -24,26 +24,3 @@ class Followup < ApplicationRecord
     Followup.where(status: :requested, case_contact: case_contact).count == 0
   end
 end
-
-# == Schema Information
-#
-# Table name: followups
-#
-#  id                :bigint           not null, primary key
-#  followupable_type :string
-#  note              :text
-#  status            :integer          default("requested")
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  case_contact_id   :bigint
-#  creator_id        :bigint
-#  followupable_id   :bigint
-#
-# Indexes
-#
-#  index_followups_on_case_contact_id  (case_contact_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (creator_id => users.id)
-#

@@ -65,26 +65,3 @@ class ApiCredential < ApplicationRecord
     new_refresh_token
   end
 end
-
-# == Schema Information
-#
-# Table name: api_credentials
-#
-#  id                       :bigint           not null, primary key
-#  api_token_digest         :string
-#  refresh_token_digest     :string
-#  refresh_token_expires_at :datetime
-#  token_expires_at         :datetime
-#  created_at               :datetime         not null
-#  updated_at               :datetime         not null
-#  user_id                  :bigint           not null
-#
-# Indexes
-#
-#  index_api_credentials_on_api_token_digest      (api_token_digest) UNIQUE WHERE (api_token_digest IS NOT NULL)
-#  index_api_credentials_on_refresh_token_digest  (refresh_token_digest) UNIQUE WHERE (refresh_token_digest IS NOT NULL)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (user_id => users.id)
-#

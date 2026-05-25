@@ -10,20 +10,3 @@ class PatchNote < ApplicationRecord
       .where("patch_notes.created_at < ?", Health.instance.latest_deploy_time)
   }
 end
-
-# == Schema Information
-#
-# Table name: patch_notes
-#
-#  id                  :bigint           not null, primary key
-#  note                :text             not null
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  patch_note_group_id :bigint           not null
-#  patch_note_type_id  :bigint           not null
-#
-# Foreign Keys
-#
-#  fk_rails_...  (patch_note_group_id => patch_note_groups.id)
-#  fk_rails_...  (patch_note_type_id => patch_note_types.id)
-#

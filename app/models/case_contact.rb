@@ -312,37 +312,3 @@ class CaseContact < ApplicationRecord
     }
   end
 end
-
-# == Schema Information
-#
-# Table name: case_contacts
-#
-#  id                         :bigint           not null, primary key
-#  contact_made               :boolean          default(FALSE)
-#  deleted_at                 :datetime
-#  draft_case_ids             :integer          default([]), is an Array
-#  duration_minutes           :integer
-#  medium_type                :string
-#  metadata                   :jsonb
-#  miles_driven               :integer          default(0), not null
-#  notes                      :string
-#  occurred_at                :datetime
-#  reimbursement_complete     :boolean          default(FALSE)
-#  status                     :string           default("started")
-#  volunteer_address          :string
-#  want_driving_reimbursement :boolean          default(FALSE)
-#  created_at                 :datetime         not null
-#  updated_at                 :datetime         not null
-#  casa_case_id               :bigint
-#  creator_id                 :bigint           not null
-#
-# Indexes
-#
-#  index_case_contacts_on_casa_case_id  (casa_case_id)
-#  index_case_contacts_on_creator_id    (creator_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_case_id => casa_cases.id)
-#  fk_rails_...  (creator_id => users.id)
-#

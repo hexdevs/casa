@@ -12,21 +12,3 @@ class OtherDuty < ApplicationRecord
     message: "is not valid. Occured on date cannot be prior to 1/1/1989."
   }
 end
-
-# == Schema Information
-#
-# Table name: other_duties
-#
-#  id               :bigint           not null, primary key
-#  creator_type     :string
-#  duration_minutes :bigint
-#  notes            :text
-#  occurred_at      :datetime
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  creator_id       :bigint           not null
-#
-# Foreign Keys
-#
-#  fk_rails_...  (creator_id => users.id)
-#

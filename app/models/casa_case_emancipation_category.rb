@@ -4,23 +4,3 @@ class CasaCaseEmancipationCategory < ApplicationRecord
 
   validates :casa_case_id, uniqueness: {scope: :emancipation_category_id}
 end
-
-# == Schema Information
-#
-# Table name: casa_case_emancipation_categories
-#
-#  id                       :bigint           not null, primary key
-#  created_at               :datetime         not null
-#  updated_at               :datetime         not null
-#  casa_case_id             :bigint           not null
-#  emancipation_category_id :bigint           not null
-#
-# Indexes
-#
-#  index_casa_case_emancipation_categories_on_casa_case_id  (casa_case_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_case_id => casa_cases.id)
-#  fk_rails_...  (emancipation_category_id => emancipation_categories.id)
-#

@@ -12,26 +12,3 @@ class ContactTopicAnswer < ApplicationRecord
   validates :selected, inclusion: [true, false]
   validates :contact_topic, presence: {if: ->(cta) { cta.value&.present? }, message: :must_be_selected}
 end
-
-# == Schema Information
-#
-# Table name: contact_topic_answers
-#
-#  id               :bigint           not null, primary key
-#  deleted_at       :datetime
-#  selected         :boolean          default(FALSE), not null
-#  value            :text
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  case_contact_id  :bigint           not null
-#  contact_topic_id :bigint
-#
-# Indexes
-#
-#  index_contact_topic_answers_on_case_contact_id  (case_contact_id)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (case_contact_id => case_contacts.id)
-#  fk_rails_...  (contact_topic_id => contact_topics.id)
-#

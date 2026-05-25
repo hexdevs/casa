@@ -40,22 +40,3 @@ class Banner < ApplicationRecord
     end
   end
 end
-
-# == Schema Information
-#
-# Table name: banners
-#
-#  id          :bigint           not null, primary key
-#  active      :boolean          default(FALSE)
-#  expires_at  :datetime
-#  name        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  casa_org_id :bigint           not null
-#  user_id     :bigint           not null
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_org_id => casa_orgs.id)
-#  fk_rails_...  (user_id => users.id)
-#

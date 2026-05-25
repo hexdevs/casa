@@ -219,30 +219,3 @@ class CasaCase < ApplicationRecord
     case_number_changed? || super
   end
 end
-
-# == Schema Information
-#
-# Table name: casa_cases
-#
-#  id                        :bigint           not null, primary key
-#  active                    :boolean          default(TRUE), not null
-#  birth_month_year_youth    :datetime
-#  case_number               :string           not null
-#  court_report_status       :integer          default("not_submitted")
-#  court_report_submitted_at :datetime
-#  date_in_care              :datetime
-#  slug                      :string
-#  created_at                :datetime         not null
-#  updated_at                :datetime         not null
-#  casa_org_id               :bigint           not null
-#
-# Indexes
-#
-#  index_casa_cases_on_casa_org_id                  (casa_org_id)
-#  index_casa_cases_on_case_number_and_casa_org_id  (case_number,casa_org_id) UNIQUE
-#  index_casa_cases_on_slug                         (slug)
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_org_id => casa_orgs.id)
-#

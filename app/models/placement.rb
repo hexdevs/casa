@@ -15,22 +15,3 @@ class Placement < ApplicationRecord
     allow_nil: true
   }
 end
-
-# == Schema Information
-#
-# Table name: placements
-#
-#  id                   :bigint           not null, primary key
-#  placement_started_at :datetime         not null
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  casa_case_id         :bigint           not null
-#  creator_id           :bigint           not null
-#  placement_type_id    :bigint           not null
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_case_id => casa_cases.id)
-#  fk_rails_...  (creator_id => users.id)
-#  fk_rails_...  (placement_type_id => placement_types.id)
-#

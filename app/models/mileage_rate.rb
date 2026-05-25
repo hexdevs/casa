@@ -17,21 +17,3 @@ class MileageRate < ApplicationRecord
   validates :casa_org, presence: true, allow_blank: false
   scope :for_organization, ->(org) { where(casa_org: org) }
 end
-
-# == Schema Information
-#
-# Table name: mileage_rates
-#
-#  id             :bigint           not null, primary key
-#  amount         :decimal(, )
-#  effective_date :date
-#  is_active      :boolean          default(TRUE)
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  casa_org_id    :bigint           not null
-#
-# Foreign Keys
-#
-#  fk_rails_...  (casa_org_id => casa_orgs.id)
-#  fk_rails_...  (user_id => users.id)
-#
