@@ -18,7 +18,6 @@ if ENV["RUN_SIMPLECOV"]
     command_name "Job #{ENV["TEST_ENV_NUMBER"]}" if ENV["TEST_ENV_NUMBER"]
 
     add_filter "/spec/"
-    add_filter "/lib/tasks/auto_annotate_models.rake"
     add_group "Models", "/app/models"
     add_group "Controllers", "/app/controllers"
     add_group "Channels", "/app/channels"
