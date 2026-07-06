@@ -155,15 +155,10 @@ function handleModalClose () {
   if (!selectEl) return
 
   clearSelectErrors()
-  // this line taken from docs https://select2.org/programmatic-control/add-select-clear-items
-  $('#case-selection').val(null).trigger('change')
 }
 
 // re-initialized for setting modal as dropdownParent
 function handleDropdownSelection () {
-  if ($('#case-selection').hasClass('select2')) {
-    $('#case-selection').select2()
-  }
 }
 
 $(() => { // JQuery's callback for the DOM loading

@@ -29,7 +29,7 @@
     <div class="col-sm-12 flex align-items-center">
       <h4 class="pull-left mr-2 my-1">Filter by:</h4>
       <div class="dropdown pull-left mx-2" data-filter="volunteer">
-        <select class="form-control select2 creator_ids" multiple="true" data-placeholder="Volunteer">
+        <select class="form-control creator_ids" multiple="true" data-placeholder="Volunteer">
           <% @volunteers_for_filter.each do |volunteer| %>
             <option value="<%= volunteer[0] %>"><%= volunteer[1] %></option>
           <% end %>

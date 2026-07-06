@@ -6,7 +6,6 @@
 @use "datatables.net-dt/css/jquery.dataTables";
 @use "@fortawesome/fontawesome-free/scss/fontawesome";
 @use "@fortawesome/fontawesome-free/scss/solid";
-@use "select2/dist/css/select2";
 @use "tom-select/dist/css/tom-select.bootstrap5.css";
 
 // custom css for the app
@@ -21,7 +20,6 @@
 @use "shared/layout";
 @use "shared/navbar";
 @use "shared/noscript";
-@use "shared/select2_additional_styles";
 @use "shared/sidebar";
 @use "shared/tomselect_additional_styles.scss";
 @use "shared/typography";
