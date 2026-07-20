@@ -5,6 +5,7 @@
 /* global $ */
 
 import Swal from 'sweetalert2'
+import TomSelect from 'tom-select'
 
 function copyOrdersFromCaseWithConfirmation () {
   const id = $(this).next().val()
@@ -159,6 +160,15 @@ function handleModalClose () {
 
 // re-initialized for setting modal as dropdownParent
 function handleDropdownSelection () {
+  if ($("#case-selection").hasClass("tom-select")) {
+    new TomSelect("#select-beast", {
+      create: false,
+      sortField: {
+        field: "text",
+        direction: "asc",
+      },
+    });
+  }
 }
 
 $(() => { // JQuery's callback for the DOM loading
@@ -177,8 +187,6 @@ $(() => { // JQuery's callback for the DOM loading
       disableBtn($('button.copy-court-button')[0])
     }
   })
-  // modal id is defined in _generate_docx.html.erb so would like to be able to implement modal close logic in that file
-  // but not sure how to
   $('#generate-docx-report-modal').on('hidden.bs.modal', () => handleModalClose())
 
   $('#generate-docx-report-modal').on('shown.bs.modal', () => handleDropdownSelection())

@@ -9,16 +9,16 @@ module CaseCourtReportHelpers
     expect(page).to have_selector("#generate-docx-report-modal", visible: :visible)
   end
 
-  # Opens the Select2 dropdown within the (already open) report modal.
+  # Opens the select dropdown within the (already open) report modal.
   # Confirms the dropdown options are visible.
-  def open_case_select2_dropdown
-    # Wait for the Select2 container to be visible
+  def open_case_select_dropdown
+    # Wait for the TomSelect container to be visible
     expect(page).to have_css("#case_select_body .selection", visible: :visible)
 
     # Click the container to open the dropdown
     find("#case_select_body .selection").click
 
     # Wait for the dropdown to appear
-    expect(page).to have_css(".select2-dropdown", visible: :visible)
+    expect(page).to have_css(".select-beast", visible: :visible)
   end
 end

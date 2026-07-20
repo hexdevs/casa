@@ -18,7 +18,7 @@ end
 RSpec.shared_examples "a user with organization-level case visibility in autocomplete" do
   before do
     open_court_report_modal
-    open_case_select2_dropdown
+    open_case_select_dropdown
   end
 
   it "shows all cases in their organization", :aggregate_failures do

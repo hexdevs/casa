@@ -26,14 +26,14 @@
         <% show_search = !current_user.volunteer? %>
 
         <% select_case_prompt = show_search ? "Search by volunteer name or case number" : "Select case number" %>
-        <% select2_class = show_search ? " select2" : "" %>
+        <% select_class = show_search ? " tom-select" : "" %>
         <div class="select-wrapper">
           <%= select_tag :case_number,
             options_for_select(select_options),
             prompt: select_case_prompt,
             include_blank: false,
             id: "case-selection",
-            class: "custom-select#{select2_class}",
+            class: "custom-select#{select_class}",
             required: true,
             data: { dropdown_parent: "##{id}", width: "100%" } %>
           <p class="select-required-error text-danger d-none">Case selection is required.</p>
